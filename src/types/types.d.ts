@@ -3,7 +3,7 @@ export type Coords = {
   longitude: string
 }
 
-export interface Location {
+export interface Business {
   location_account: string
   business_name: string
   street_address: string
@@ -15,4 +15,10 @@ export interface Location {
   council_district: string
   location_start_date: string
   location_1: Coords
+}
+
+interface Pagination {
+  page: number
+  limit: number
+  count: number
 }

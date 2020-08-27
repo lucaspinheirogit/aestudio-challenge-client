@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+export const Wrapper = styled.div`
+  max-width: 100%;
+  overflow-x: auto;
+`
+
 export const Container = styled.table`
   margin-top: 2rem;
   width: 100%;
@@ -39,4 +44,10 @@ export const Data = styled.td`
   }
 `
 
-export const Body = styled.tbody``
+export const Body = styled.tbody`
+  tr {
+    &:hover {
+      background-color: var(--greyish-white);
+    }
+  }
+`

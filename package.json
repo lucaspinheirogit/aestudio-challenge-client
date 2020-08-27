@@ -12,8 +12,11 @@
     "@types/react-dom": "^16.9.0",
     "axios": "^0.20.0",
     "lodash": "^4.17.20",
+    "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-moment": "^0.9.7",
+    "react-paginate": "^6.3.2",
     "react-scripts": "3.4.3",
     "react-select": "^3.1.0",
     "react-toastify": "^6.0.8",
@@ -30,7 +33,8 @@
     "extends": "react-app",
     "rules": {
       "@typescript-eslint/no-use-before-define": 0,
-      "@typescript-eslint/no-unused-vars": 0
+      "@typescript-eslint/no-unused-vars": 0,
+      "react-hooks/exhaustive-deps": 0
     }
   },
   "browserslist": {
@@ -47,6 +51,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.160",
+    "@types/react-paginate": "^6.2.1",
     "@types/react-select": "^3.0.19",
     "@types/styled-components": "^5.1.2",
     "jest-environment-jsdom-sixteen": "^1.0.3"

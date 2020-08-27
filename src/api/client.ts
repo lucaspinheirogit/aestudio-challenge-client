@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios'
 
-import { Location } from 'types'
+import { Business, Pagination } from 'types'
 
 import {
   requestInterceptor,
@@ -9,7 +9,7 @@ import {
   responseErrorInterceptor
 } from './interceptors'
 
-// Fix AxiosResponse when using response interceptors
+// Fix AxiosResponse types when using response interceptors
 declare module 'axios' {
   interface AxiosResponse<T = any> extends Promise<T> {}
 }
@@ -20,8 +20,16 @@ class httpClient {
     client.interceptors.response.use(responseInterceptor, responseErrorInterceptor)
   }
 
-  async getData() {
-    return this.client.get<Location[]>('/')
+  async getBusinesses({ page, limit }: Pagination) {
+    const businesses = await this.client.get<Business[]>('/')
+
+    const start = page * limit
+    const end = page * limit + limit
+
+    const count = businesses.length
+    const rows = businesses.slice(start, end)
+
+    return { count, rows }
   }
 }
 

@@ -2,30 +2,37 @@ import React, { useEffect, useState, useCallback } from 'react'
 
 import api from 'api'
 import Layout from 'components/Layout'
-import { Location } from 'types'
+import { Business, Pagination } from 'types'
 
 import Home from './Home'
 
 const HomeContainer = () => {
   const [loading, setLoading] = useState(false)
-  const [locations, setLocations] = useState<Location[]>([])
+  const [businesses, setBusiness] = useState<Business[]>([])
 
-  const getLocations = useCallback(async () => {
+  const [pagination, setPagination] = useState<Pagination>({
+    page: 0,
+    limit: 5,
+    count: 0
+  })
+
+  const getBusinesses = useCallback(async () => {
     setLoading(true)
 
-    const locations = await api.getData()
-    setLocations(locations)
+    const { count, rows } = await api.getBusinesses(pagination)
+    setBusiness(rows)
+    setPagination(pagination => ({ ...pagination, count }))
 
     setLoading(false)
-  }, [])
+  }, [pagination.page])
 
   useEffect(() => {
-    getLocations()
-  }, [getLocations])
+    getBusinesses()
+  }, [getBusinesses, pagination.page])
 
   return (
     <Layout loading={loading}>
-      <Home locations={locations} />
+      <Home businesses={businesses} pagination={pagination} setPagination={setPagination} />
     </Layout>
   )
 }
