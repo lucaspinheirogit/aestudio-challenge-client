@@ -13,8 +13,12 @@ export const Container = styled.div`
   }
 `
 
-export const LocationContainer = styled.div`
+export const ButtonsContainer = styled.div`
+  padding: 1.5rem 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
+
+  button {
+    margin: 0.25rem;
+  }
 `

@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Loading = () => (
-  <div data-testid="loading" className="spinner-container">
+const Loading = ({ ...props }) => (
+  <div data-testid="loading" className="spinner-container" {...props}>
     <div className="lds-spinner">
       <div></div>
       <div></div>

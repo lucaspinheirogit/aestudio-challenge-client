@@ -7399,6 +7399,11 @@ no-case@^3.0.3:
     lower-case "^2.0.1"
     tslib "^1.10.0"
 
+no-scroll@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/no-scroll/-/no-scroll-2.1.1.tgz#f37e08cb159b75a5bdbfc0a87cd9223e120e6e27"
+  integrity sha512-YTzGAJOo/B6hkodeT5SKKHpOhAzjMfkUCCXjLJwjWk2F4/InIg+HbdH9kmT7bKpleDuqLZDTRy2OdNtAj0IVyQ==
+
 node-forge@0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.9.0.tgz#d624050edbb44874adca12bb9a52ec63cb782579"
@@ -9088,6 +9093,14 @@ react-paginate@^6.3.2:
   integrity sha512-Ch++Njfv8UHpLtIMiQouAPeJQA5Ki86kIYfCer6c1B96Rvn3UF27se+goCilCP8oHNXNsA2R2kxvzanY1YIkyg==
   dependencies:
     prop-types "^15.6.1"
+
+react-responsive-modal@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/react-responsive-modal/-/react-responsive-modal-5.0.3.tgz#74d6938d4255ed3514af8b394f44c3aabfa2643d"
+  integrity sha512-iLEkCv/wJZ/zvCEh9eirxdA4hKj7fVAsiaR408XLmEKSKAsQLScSAF3neJN3ZRiGzvyhk4cYTflJfjE9eqLiIQ==
+  dependencies:
+    classnames "^2.2.6"
+    no-scroll "^2.1.1"
 
 react-scripts@3.4.3:
   version "3.4.3"

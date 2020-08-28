@@ -31,6 +31,12 @@ class httpClient {
 
     return { count, rows }
   }
+
+  async getOldestBusiness() {
+    const businesses = await this.client.get<Business[]>('/')
+
+    return businesses[0]
+  }
 }
 
 export default new httpClient(

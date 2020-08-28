@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
 `
 
 export const Container = styled.table`
-  margin-top: 2rem;
   width: 100%;
   background-color: var(--white);
   border: 1px solid var(--gray);

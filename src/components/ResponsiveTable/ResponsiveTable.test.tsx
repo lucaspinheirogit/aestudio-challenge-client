@@ -7,7 +7,7 @@ import Table from './Table'
 
 describe('ResponsiveTable', () => {
   it('should render table or cards correctly according to screen size', () => {
-    render(<ResponsiveTable headers={['CompanyName']} body={[['Google'], ['Amazon']]} />)
+    render(<ResponsiveTable name="business-list" headers={['CompanyName']} body={[['Google'], ['Amazon']]} />)
 
     expect(screen.queryByTestId('responsive-table')).toBeInTheDocument()
     expect(screen.queryByTestId('responsive-table-cards')).not.toBeInTheDocument()

@@ -9,6 +9,9 @@ export default createGlobalStyle`
     --gray: #AFB1B8;
     --dark-gray: #5c6873;
     --orange: #ff9f4d;
+    --salmon: #fb6c63;
+    --dark-shadow: rgba(50, 50, 93, 0.1);
+    --black-shadow: rgba(0, 0, 0, 0.08);
   }
 
   * {
