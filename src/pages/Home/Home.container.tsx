@@ -17,6 +17,7 @@ const HomeContainer = () => {
   })
 
   const [isOldestBusinessModalOpen, setOldestBusinessModalOpen] = useState(false)
+  const [isMostLocationsBusinessModalOpen, setMostLocationsBusinessModalOpen] = useState(false)
 
   const getBusinesses = useCallback(async () => {
     setLoading(true)
@@ -33,6 +34,7 @@ const HomeContainer = () => {
   }, [getBusinesses, pagination.page])
 
   const toggleOldestBusinessModalOpen = () => setOldestBusinessModalOpen(!isOldestBusinessModalOpen)
+  const toggleMostLocationsBusinessModalOpen = () => setMostLocationsBusinessModalOpen(!isMostLocationsBusinessModalOpen)
 
   return (
     <Layout loading={loading}>
@@ -42,6 +44,8 @@ const HomeContainer = () => {
         setPagination={setPagination}
         isOldestBusinessModalOpen={isOldestBusinessModalOpen}
         toggleOldestBusinessModalOpen={toggleOldestBusinessModalOpen}
+        isMostLocationsBusinessModalOpen={isMostLocationsBusinessModalOpen}
+        toggleMostLocationsBusinessModalOpen={toggleMostLocationsBusinessModalOpen}
       />
     </Layout>
   )

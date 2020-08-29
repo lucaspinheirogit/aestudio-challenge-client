@@ -8,7 +8,9 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({ title, onClick }: Props) => (
-  <Touchable onClick={onClick}>{title}</Touchable>
+  <Touchable data-testid="button" onClick={onClick}>
+    {title}
+  </Touchable>
 )
 
 export default Button

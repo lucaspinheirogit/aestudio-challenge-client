@@ -15,6 +15,7 @@ export interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ open, onClose, loading, children }: ModalProps) => {
   return (
     <ResponsiveModal
+      data-testid="modal"
       open={open}
       onClose={onClose}
       center

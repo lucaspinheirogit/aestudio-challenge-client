@@ -19,7 +19,7 @@ const Pagination: React.FC<Props> = ({
   const pageCount = Math.ceil(listCount / pageLength)
 
   return (
-    <Container>
+    <Container data-testid="pagination">
       {pageCount > 0 && (
         <ReactPaginate
           pageCount={pageCount}

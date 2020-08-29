@@ -7,7 +7,9 @@ import Table from './Table'
 
 describe('ResponsiveTable', () => {
   it('should render table or cards correctly according to screen size', () => {
-    render(<ResponsiveTable name="business-list" headers={['CompanyName']} body={[['Google'], ['Amazon']]} />)
+    render(
+      <ResponsiveTable name="list" headers={['CompanyName']} body={[['Google'], ['Amazon']]} />
+    )
 
     expect(screen.queryByTestId('responsive-table')).toBeInTheDocument()
     expect(screen.queryByTestId('responsive-table-cards')).not.toBeInTheDocument()
@@ -21,13 +23,13 @@ describe('ResponsiveTable', () => {
   })
 
   it('should render Cards correctly', () => {
-    render(<Cards headers={['CompanyName']} body={[['Google'], ['Amazon']]} />)
+    render(<Cards name="list" headers={['CompanyName']} body={[['Google'], ['Amazon']]} />)
 
     expect(screen.getByText('Google')).toBeInTheDocument()
   })
 
   it('should render Table correctly', () => {
-    render(<Table headers={['CompanyName']} body={[['Google'], ['Amazon']]} />)
+    render(<Table name="list" headers={['CompanyName']} body={[['Google'], ['Amazon']]} />)
 
     expect(screen.getByText('Google')).toBeInTheDocument()
   })

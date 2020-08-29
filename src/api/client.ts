@@ -37,6 +37,12 @@ class httpClient {
 
     return businesses[0]
   }
+
+  async getBusinessWithMostLocations() {
+    const businesses = await this.client.get<Business[]>('/')
+
+    return businesses.slice(0, 5)
+  }
 }
 
 export default new httpClient(

@@ -7,6 +7,7 @@ import { Business, Pagination } from 'types'
 
 import BusinessesList from './BusinessesList'
 import OldestBusinessModal from './OldestBusinessModal'
+import MostLocationsBusinessModal from './MostLocationsBusinessModal'
 import { Container, ButtonsContainer } from './Home.styles'
 
 interface Props {
@@ -15,6 +16,8 @@ interface Props {
   setPagination: (pagination: Pagination) => void
   isOldestBusinessModalOpen: boolean
   toggleOldestBusinessModalOpen: () => void
+  isMostLocationsBusinessModalOpen: boolean
+  toggleMostLocationsBusinessModalOpen: () => void
 }
 
 const Home: React.FC<Props> = ({
@@ -22,7 +25,9 @@ const Home: React.FC<Props> = ({
   pagination,
   setPagination,
   isOldestBusinessModalOpen,
-  toggleOldestBusinessModalOpen
+  toggleOldestBusinessModalOpen,
+  isMostLocationsBusinessModalOpen,
+  toggleMostLocationsBusinessModalOpen
 }: Props) => (
   <Container>
     <img width="256" src={Logo} alt="AE.STUDIO logo" />
@@ -31,7 +36,7 @@ const Home: React.FC<Props> = ({
       <Button title="Show oldest business" onClick={toggleOldestBusinessModalOpen} />
       <Button
         title="Show Business with the most locations"
-        onClick={toggleOldestBusinessModalOpen}
+        onClick={toggleMostLocationsBusinessModalOpen}
       />
     </ButtonsContainer>
 
@@ -49,6 +54,12 @@ const Home: React.FC<Props> = ({
       <OldestBusinessModal
         open={isOldestBusinessModalOpen}
         onClose={toggleOldestBusinessModalOpen}
+      />
+    )}
+    {isMostLocationsBusinessModalOpen && (
+      <MostLocationsBusinessModal
+        open={isMostLocationsBusinessModalOpen}
+        onClose={toggleMostLocationsBusinessModalOpen}
       />
     )}
   </Container>
