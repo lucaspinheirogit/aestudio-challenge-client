@@ -10,6 +10,7 @@ export const Container = styled.div`
 `
 
 export const Title = styled.h2`
+  text-align: center;
   font-weight: 500;
   color: var(--orange);
 `

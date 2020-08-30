@@ -21,32 +21,22 @@ class httpClient {
   }
 
   async getBusinesses({ page, limit }: Pagination) {
-    const businesses = await this.client.get<Business[]>('/')
-
-    const start = page * limit
-    const end = page * limit + limit
-
-    const count = businesses.length
-    const rows = businesses.slice(start, end)
-
-    return { count, rows }
+    return this.client.get<{ count: number; rows: Business[] }>('/businesses', {
+      params: { page, limit }
+    })
   }
 
   async getOldestBusiness() {
-    const businesses = await this.client.get<Business[]>('/')
-
-    return businesses[0]
+    return this.client.get<Business>('/businesses/oldest')
   }
 
   async getBusinessWithMostLocations() {
-    const businesses = await this.client.get<Business[]>('/')
-
-    return businesses.slice(0, 5)
+    return this.client.get<Business[]>('/businesses/most-locations')
   }
 }
 
 export default new httpClient(
   axios.create({
-    baseURL: 'https://data.lacity.org/resource/6rrh-rzua.json'
+    baseURL: 'http://localhost:5000'
   })
 )
