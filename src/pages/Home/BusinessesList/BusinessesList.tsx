@@ -29,7 +29,7 @@ const BusinessesList: React.FC<Props> = ({ businesses }: Props) => {
       business?.zip_code,
       business?.location_account,
       business?.location_description,
-      <Moment date={business?.location_start_date} format="YYYY/MM/DD" />,
+      <Moment date={business?.location_start_date} format="DD/MM/YYYY" />,
       business?.location_1 ? (
         <LocationContainer>
           <a href={googleMapsURL} target="_blank" rel="noopener noreferrer">
